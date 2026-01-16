@@ -1,0 +1,50 @@
+/* GENERAL */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.logo {
+  width: 32px;
+  height: 32px;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* PROMO CARDS */
+.promo-card {
+  border-radius: 15px;
+  min-height: 220px;
+}
+
+.promo-blue {
+  background: linear-gradient(135deg, #5aa9ff, #3b82f6);
+}
+
+.promo-purple {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+}
+
+.promo-img {
+  width: 260px;
+  height: auto;
+}
+
+/* CAR CARD */
+.car-card {
+  border-radius: 12px;
+}
+
+.car-img {
+  width: 180px;
+  margin: 10px 0;
+}
+
+.car-card small {
+  font-size: 13px;
+}
