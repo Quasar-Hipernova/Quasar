@@ -1,73 +1,6 @@
-const cars = [
-    {
-        id: 1, 
-        name: "Koenigsegg",
-        type: "Sport",
-        imgLink: "./assets/cars/car_koenigsegg.png",
-        liters: 90,
-        manual : true,
-        people: 2,
-        price: 99
-    }, 
-    {
-        isFavorite: true, 
-        name: "Koenigsegg",
-        type: "Sport",
-        imgLink: "./assets/cars/car_koenigsegg.png",
-        liters: 90,
-        manual : true,
-        people: 2,
-        price: 99
-    }, 
-    {
-        isFavorite: false, 
-        name: "Koenigsegg",
-        type: "Sport",
-        imgLink: "./assets/cars/car_koenigsegg.png",
-        liters: 90,
-        manual : true,
-        people: 2,
-        price: 99
-    }, 
-    {
-        isFavorite: true, 
-        name: "Nissan",
-        type: "Sport",
-        imgLink: "./assets/cars/car_nissangt-r.png",
-        liters: 80,
-        manual : true,
-        people: 2,
-        price: 80,
-        TotalPrice: 100
-    }   
-]
-const tbody = document.querySelector("#tbody");
-
-cars.forEach(function(car){
-    tbody.innerHTML += `
-    <tr>
-        <td>${car.id}</td>
-        <td>${car.name}</td>
-        <td>${car.type}</td>
-        <td>2</td>
-        <td>Manual</td>
-        <td>90L</td>
-        <td class="price">$99.00</td>
-        <td class="popular">Popular</td>
-    </tr>
-    `
-})
-
-const carName = "Koenigsegg";
-
-let car = cars.find(function(car){
-    return car.name === carName
-})
-
-console.log(car)
-
 document.addEventListener('DOMContentLoaded', () => {
-    const navItems = document.querySelectorAll('.nav-item');
+    /* Navegación entre páginas */
+    const navItems = document.querySelectorAll('.nav-item'); // Excluye el Log Out 
     const pages = document.querySelectorAll('.page');
     navItems.forEach(item => {
         item.addEventListener('click', (e) => {
@@ -80,6 +13,41 @@ document.addEventListener('DOMContentLoaded', () => {
             if (targetPage) {
                 targetPage.classList.add('active');
             }
+        });
+    });
+});
+
+/* Búsqueda en la tabla de carros */
+document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('search');
+    const tableBody = document.getElementById('carTableBody');
+
+    if (!searchInput || !tableBody) {
+        console.warn('No se encontró la acción requerida');
+        return;
+    }
+
+    // Búsqueda en tiempo real
+    searchInput.addEventListener('input', function() {
+        const filter = this.value.toLowerCase().trim();
+
+        Array.from(tableBody.rows).forEach(row => {
+            if (row.cells.length < 8) {
+                row.style.display = 'none';
+                return;
+            }
+
+            const textsToSearch = [
+                row.cells[1], // Modelo
+                row.cells[2], // Tipo
+                row.cells[3], // Personas
+                row.cells[4], // Transmisión
+                row.cells[5], // Combustible
+                row.cells[7]  // Sección
+            ].map(cell => cell?.textContent?.toLowerCase() || '');
+
+            const matches = textsToSearch.some(text => text.includes(filter));
+            row.style.display = matches ? '' : 'none';
         });
     });
 });

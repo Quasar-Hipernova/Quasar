@@ -1,0 +1,180 @@
+/* Reset General */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Avoid width/height problems with padding and border */
+}
+
+:root {
+    /* Color Variables */
+    --primary: #2c3e50;
+    --accent: #3498db;
+    --accent-hover: #2980b9;
+    --border: #ddd;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    /* Allows the footer to be pasted below if the content is short */
+}
+
+.container {
+    /* Container centered maximum 1200px */
+    max-width: 1200px;
+    margin: 100px;
+    padding: 0 20px;
+}
+
+/* Login Card */
+.contact {
+    padding: 4rem 0;
+    display: flex;
+    justify-content: center;
+    min-height: 70vh;
+}
+
+.login-card {
+    width: 340px;
+    padding: 50px 30px;
+    border-radius: 30px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+    backdrop-filter: blur(20px);
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.avatar {
+    /* Avatar circular */
+    width: 200px;
+    height: 120px;
+    background: url('../Login/img/login.jpg') center/cover no-repeat;
+    margin: 5px auto 30px;
+}
+
+.input-box {
+    /* Relative container to position the icon within the input */
+    position: relative;
+    margin: 20px 0;
+}
+
+.input-box .icon {
+    /* Icons inside the input */
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.3rem;
+    color: #aaa;
+    pointer-events: none;
+}
+
+.input-box input {
+    /* Inputs styles */
+    width: 100%;
+    padding: 14px 14px 14px 50px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgb(100, 100, 100);
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.input-box input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.login-btn {
+    /* Button login */
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(90deg, #0011ff, #00aaff);
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all .4s ease;
+}
+
+.login-btn:hover {
+    background: linear-gradient(90deg, #0af, #0077ff);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 170, 255, 0.6);
+}
+
+/* Tablets and mobile phones */
+@media (min-width: 481px) {
+    .container {
+        padding: 0 30px;
+    }
+    .login-card {
+        padding: 3rem 2.5rem;
+        max-width: 420px;
+    }
+    .avatar {
+        width: 130px;
+        height: 130px;
+    }
+}
+
+/* Small laptop */
+@media (min-width: 768px) {
+    .login-card {
+        max-width: 460px;
+        padding: 3.5rem 3rem;
+    }
+    .avatar {
+        width: 140px;
+        height: 140px;
+        margin-bottom: 2rem;
+    }
+    .input-box input {
+        padding: 1.1rem 1.2rem 1.1rem 3.2rem;
+        font-size: 1.05rem;
+    }
+    .login-btn {
+        padding: 1.15rem;
+        font-size: 1.1rem;
+    }
+}
+
+/* Medium desktop (1024px+) */
+@media (min-width: 1024px) {
+    .login-card {
+        max-width: 480px;
+        padding: 4rem 3.5rem;
+        border-radius: 24px;
+    }
+    .avatar {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+/* Large desktop (1200px+) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 500px;
+    }
+    .login-card {
+        max-width: 520px;
+        padding: 4.5rem 4rem;
+    }
+    .avatar {
+        width: 180px;
+        height: 180px;
+    }
+}
