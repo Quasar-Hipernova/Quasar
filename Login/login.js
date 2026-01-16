@@ -24,6 +24,7 @@ function intentarLogin () {
     }
     // Access the Dashboard
     else if (emailValue === 'admin' && passwordValue === 'admin') {
+        sessionStorage.setItem("admin", "True")
         Swal.fire ({
             title: 'Nice',
             text: '!WELCOME ADMIN¡',

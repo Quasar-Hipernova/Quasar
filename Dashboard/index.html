@@ -9,6 +9,11 @@
         <link rel="stylesheet" href="../Dashboard/style.css"> <!-- Load CSS file to style in the page -->
     </head>
     <body> <!-- Everything the user sees -->
+        <script>
+            if (sessionStorage.getItem("admin") !== "True") {
+                location = "../Login/login.html"
+            }
+        </script>
         <div class="layout">
             <aside class="sidebar">  <!-- Creation of the Sidebar -->
                 <div class="logo"> Dashboard </div>
@@ -59,7 +64,6 @@
                         <h1> Table About The Cars </h1>
                         <div class="container">
                             <h1> Carros Disponibles para Renta </h1>
-                            <i class="fa-solid fa-magnifying-glass" style="color: gray;"> </i>
                             <input type="text" id="search" placeholder="Search..."> <!-- Added placeholder for usability -->
                             <table>
                                 <thead>
