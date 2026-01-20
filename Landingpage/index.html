@@ -5,6 +5,7 @@
         <meta charset="UTF-8"> <!-- Allows accents ñ, emojis, etc... -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes it look good on phones -->
         <title> Landing Page </title> <!-- Text in the browser tab -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"> <!-- Add Font Awesome for icons -->
         <link rel="stylesheet" href="../Landingpage/style.css"> <!-- Load CSS file to style in the page -->
     </head>
@@ -42,13 +43,22 @@
                     <i class="fa-solid fa-magnifying-glass"> </i>
                     <input id="searchInput" type="text" placeholder="Search">
                 </div>
+                <button 
+                    class="btn btn-primary mt-3"
+                    data-bs-toggle="modal"
+                    data-bs-target="#addCarModal">
+                    + Add Car
+                </button>
             </section>
+
             <section class="cars"> <!-- Popular Cars Section -->
                 <header class="section-header">
                     <h3> Popular Cars </h3>
                 </header>
-                <div  id="popular-cars-grid" class="cars-grid"> <!-- Car Card -->
-                    
+                <div id="recommendation-cars-grid" class="cars-grid"> <!-- Car Card -->
+                </div>
+                <div class="cars-grid mt-4" id="cardsContainer">
+                    <!-- Cards dinámicas -->
                 </div>
             </section>
             <section class="cars"> <!-- Recommendation Cars Section -->
@@ -56,7 +66,9 @@
                     <h3> Recommendation Cars </h3>
                 </header>
                 <div id="recommendation-cars-grid" class="cars-grid"> <!-- Car Card -->
-
+                </div>
+                <div class="cars-grid mt-4" id="cardsContainer">
+                    <!-- Cards dinámicas -->
                 </div>
             </section>
         </main>
@@ -97,6 +109,54 @@
                 </div>
             </div>
         </footer>
-        <script src="../Landingpage/script.js"> </script> <!-- Load JavaScript file to style and animations in the page -->
+        <div class="modal fade" id="addCarModal" tabindex="-1">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add New Car</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input id="name" class="form-control" placeholder="Car name">
+                            </div>
+                            <div class="col-md-6">
+                                <input id="type" class="form-control" placeholder="Type (SUV, Sport)">
+                            </div>
+                            <div class="col-md-6">
+                                <input id="fuel" class="form-control" placeholder="Fuel (90L)">
+                            </div>
+                            <div class="col-md-6">
+                                <input id="transmission" class="form-control" placeholder="Transmission">
+                            </div>
+                            <div class="col-md-6">
+                                <input id="people" type="number" class="form-control" placeholder="People">
+                            </div>
+                            <div class="col-md-6">
+                                <input id="price" type="number" class="form-control" placeholder="Price per day">
+                            </div>
+                            <div class="col-12">
+                                <input id="image" type="file" class="form-control" accept="image/*">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button class="btn btn-primary" onclick="addCar()">Save Car</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- JS de Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+        <script src="../Landingpage/addCars.js"></script>
+        <!-- <script src="../Landingpage/script.js"> </script> Load JavaScript file to style and animations in the page -->
     </body>
 </html>
