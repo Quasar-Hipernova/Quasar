@@ -1,0 +1,314 @@
+<!-- CREATE A THE DASHBOARD PAGE-->
+<!DOCTYPE html> <!-- Hey browser, this is modern HTML5 -->
+<html lang="en"> <!-- This page is English -->
+    <head> <!-- Invisible but very important stuff (metadata, title, css, etc) -->
+        <meta charset="UTF-8"> <!-- Allows accents ñ, emojis, etc... -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes it look good on phones -->
+        <title> Basic Dashboard </title> <!-- Text in the browser tab -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"> <!-- Add Font Awesome for icons -->
+        <link rel="stylesheet" href="../Dashboard/style.css"> <!-- Load CSS file to style in the page -->
+    </head>
+    <body> <!-- Everything the user sees -->
+        <script> // If the user is NOT marked as an admin, they are immediately redirected to the login page.
+        if (sessionStorage.getItem("admin") !== "True") {location = "../Login/login.html"} 
+        </script>
+        <div class="layout">
+            <aside class="sidebar">  <!-- Creation of the Sidebar -->
+                <div class="logo"> Dashboard </div>
+                <ul class="nav-list"> <!-- Create List -->
+                    <li> <a class="nav-item active" data-page="dashboard"> Dashboard </a> </li>
+                    <li> <a class="nav-item" data-page="table"> Table </a> </li>
+                    <li> <a class="nav-item" data-page="users"> Users </a> </li>
+                    <li> <a class="nav-item" data-page="sales"> Sales </a> </li>
+                    <li> <a class="nav-item" data-page="products"> Products </a> </li>
+                    <li> <a class="nav-item" data-page="settings"> Settings </a> </li>
+                </ul> 
+                <div class="nav-logout"> <a href="../Login/login.html"> Log Out </a> </div>
+            </aside>
+            <main class="main-content">  <!-- Main Content -->
+                <header class="topbar"> <!-- Create Header -->
+                    <button class="menu-toggle" aria-label="Open menu"> <i class="fas fa-bars"></i> </button> <!-- Responsive menu icon -->
+                    <div>
+                        <h3> WELCOME </h3> <!-- Welcome message -->
+                    </div>
+                    <div class="user-info">
+                        <span> Admin </span> <!-- Admin image -->
+                        <div> <img src="../Dashboard/img/Profil & Notification.png" alt="Profile"> </div> <!-- Added image profile -->
+                    </div>
+                </header>
+                <section class="content-area"> <!-- Section created for different sections -->
+                    <div id="dashboard" class="page active"> <!-- Section of the Dashboard -->
+                        <h1> Dashboard </h1>
+                        <p> Vista general del sistema </p>
+                        <div class="card-grid">
+                            <div class="card">
+                                <h3> Ventas Hoy </h3>
+                                <p> $48,352 </p>
+                                <small> +18% respecto a ayer </small>
+                            </div>
+                            <div class="card">
+                                <h3> Usuarios Activos </h3>
+                                <p> 2,847 </p>
+                                <small> En este momento </small>
+                            </div>
+                            <div class="card">
+                                <h3> Pedidos Pendientes </h3>
+                                <p> 142 </p>
+                                <small> -3% esta semana </small>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="table" class="page"> <!-- Section of the table -->
+                        <h1> Table About The Cars </h1>
+                        <div class="container">
+                            <h1> Carros Disponibles para Renta </h1>
+                            <input type="text" id="search" placeholder="Search..."> <!-- Added placeholder for usability -->
+                            <table> <!-- Create table with semantic structure -->
+                                <thead> <!-- Headers (column titles) -->
+                                    <tr id="trTbody"> <!--  The body of the table -->
+                                        <th id="id"> # </th>
+                                        <th id="model"> Modelo </th>
+                                        <th id="type"> Tipo </th>
+                                        <th id="people"> Personas </th>
+                                        <th id="trans"> Transmisión </th>
+                                        <th id="fuel"> Combustible </th>
+                                        <th id="price"> Precio/día </th>
+                                        <th id="section"> Sección </th>
+                                        <th id="details-btn"> Detalles </th>
+                                        <th id="edit-btn"> Editar </th>
+                                        <th id="delete-btn"> Eliminar </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="carTableBody">
+                                    <tr>
+                                        <td> 1 </td>
+                                        <td> Koenigsegg </td>
+                                        <td> Sport </td>
+                                        <td> 2 </td>
+                                        <td> Manual </td>
+                                        <td> 90L </td>
+                                        <td class="price"> $99.00 </td>
+                                        <td class="popular"> Popular </td>
+                                        <td> <button class="details-btn" type="button" id="details"> Detalles </button> </td>
+                                        <td> <button class="edit-btn" type="button" id="edit"> Editar </button> </td>
+                                        <td> <button class="delete-btn" type="button" id="delete"> Eliminar </button> </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 2 </td>
+                                        <td> Nissan GT-R </td>
+                                        <td> Sport </td>
+                                        <td> 2 </td>
+                                        <td> Manual </td>
+                                        <td> 80L </td>
+                                        <td class="price"> $80.00 <span class="original-price"> $100.00 </span> </td>
+                                        <td class="popular"> Popular </td>
+                                        <td> <button class="details-btn" type="button" id="details"> Detalles </button> </td>
+                                        <td> <button class="edit-btn" type="button" id="edit"> Editar </button> </td>
+                                        <td> <button class="delete-btn" type="button" id="delete"> Eliminar </button> </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 3 </td>
+                                        <td> Rolls-Royce </td>
+                                        <td> Sedan </td>
+                                        <td> 4 </td>
+                                        <td> Manual </td>
+                                        <td> 70L </td>
+                                        <td class="price"> $96.00 </td>
+                                        <td class="popular"> Popular </td>
+                                        <td> <button class="details-btn" type="button" id="details"> Detalles </button> </td>
+                                        <td> <button class="edit-btn" type="button" id="edit"> Editar </button> </td>
+                                        <td> <button class="delete-btn" type="button" id="delete"> Eliminar </button> </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 4 </td>
+                                        <td> Nissan GT-R </td>
+                                        <td> Sport </td>
+                                        <td> 2 </td>
+                                        <td> Manual </td>
+                                        <td> 80L </td>
+                                        <td class="price"> $80.00 <span class="original-price"> $100.00 </span> </td>
+                                        <td class="popular"> Popular </td>
+                                        <td> <button class="details-btn" type="button" id="details"> Detalles </button> </td>
+                                        <td> <button class="edit-btn" type="button" id="edit"> Editar </button> </td>
+                                        <td> <button class="delete-btn" type="button" id="delete"> Eliminar </button> </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 5 </td>
+                                        <td> All New Rush </td>
+                                        <td> SUV </td>
+                                        <td> 6 </td>
+                                        <td> Manual </td>
+                                        <td> 70L </td>
+                                        <td class="price"> $72.00 <span class="original-price"> $80.00 </span> </td>
+                                        <td class="recommendation"> Recomendado </td>
+                                        <td> <button class="details-btn" type="button" id="details"> Detalles </button> </td>
+                                        <td> <button class="edit-btn" type="button" id="edit"> Editar </button> </td>
+                                        <td> <button class="delete-btn" type="button" id="delete"> Eliminar </button> </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 6 </td>
+                                        <td> CR - V </td>
+                                        <td> SUV </td>
+                                        <td> 6 </td>
+                                        <td> Manual </td>
+                                        <td> 80L </td>
+                                        <td class="price"> $80.00 </td>
+                                        <td class="recommendation"> Recomendado </td>
+                                        <td> <button class="details-btn" type="button" id="details"> Detalles </button> </td>
+                                        <td> <button class="edit-btn" type="button" id="edit"> Editar </button> </td>
+                                        <td> <button class="delete-btn" type="button" id="delete"> Eliminar </button> </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 7 </td>
+                                        <td> All New Terios </td>
+                                        <td> SUV </td>
+                                        <td> 6 </td>
+                                        <td> Manual </td>
+                                        <td> 90L </td>
+                                        <td class="price"> $74.00 </td>
+                                        <td class="recommendation"> Recomendado </td>
+                                        <td> <button class="details-btn" type="button" id="details"> Detalles </button> </td>
+                                        <td> <button class="edit-btn" type="button" id="edit"> Editar </button> </td>
+                                        <td> <button class="delete-btn" type="button" id="delete"> Eliminar </button> </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 8 </td>
+                                        <td> CR - V </td>
+                                        <td> SUV </td>
+                                        <td> 6 </td>
+                                        <td> Manual </td>
+                                        <td> 80L </td>
+                                        <td class="price"> $80.00 </td>
+                                        <td class="recommendation"> Recomendado </td>
+                                        <td> <button class="details-btn" type="button" id="details"> Detalles </button> </td>
+                                        <td> <button class="edit-btn" type="button" id="edit"> Editar </button> </td>
+                                        <td> <button class="delete-btn" type="button" id="delete"> Eliminar </button> </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 9 </td>
+                                        <td> MG ZX Exclusive </td>
+                                        <td> Hatchback </td>
+                                        <td> 4 </td>
+                                        <td> Manual </td>
+                                        <td> 70L </td>
+                                        <td class="price"> $76.00 <span class="original-price"> $80.00 </span> </td>
+                                        <td class="recommendation"> Recomendado </td>
+                                        <td> <button class="details-btn" type="button" id="details"> Detalles </button> </td>
+                                        <td> <button class="edit-btn" type="button" id="edit"> Editar </button> </td>
+                                        <td> <button class="delete-btn" type="button" id="delete"> Eliminar </button> </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 10 </td>
+                                        <td> New MG ZS </td>
+                                        <td> SUV </td>
+                                        <td> 6 </td> 
+                                        <td> Manual </td>
+                                        <td> 80L </td>
+                                        <td class="price"> $80.00 </td>
+                                        <td class="recommendation"> Recomendado </td>
+                                        <td> <button class="details-btn" type="button" id="details"> Detalles </button> </td>
+                                        <td> <button class="edit-btn" type="button" id="edit"> Editar </button> </td>
+                                        <td> <button class="delete-btn" type="button" id="delete"> Eliminar </button> </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 11 </td>
+                                        <td> MG ZX Excite </td>
+                                        <td> Hatchback </td>
+                                        <td> 4 </td>
+                                        <td> Manual </td>
+                                        <td> 90L </td>
+                                        <td class="price"> $74.00 </td>
+                                        <td class="recommendation"> Recomendado </td>
+                                        <td> <button class="details-btn" type="button" id="details"> Detalles </button> </td>
+                                        <td> <button class="edit-btn" type="button" id="edit"> Editar </button> </td>
+                                        <td> <button class="delete-btn" type="button" id="delete"> Eliminar </button> </td>
+                                    </tr>
+                                    <tr>
+                                        <td> 12 </td>
+                                        <td> New MG ZS </td>
+                                        <td> SUV </td>
+                                        <td> 6 </td>
+                                        <td> Manual </td>
+                                        <td> 80L </td>
+                                        <td class="price"> $80.00 </td>
+                                        <td class="recommendation"> Recomendado </td>
+                                        <td> <button class="details-btn" type="button" id="details"> Detalles </button> </td>
+                                        <td> <button class="edit-btn" type="button" id="edit"> Editar </button> </td>
+                                        <td> <button class="delete-btn" type="button" id="delete"> Eliminar </button> </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="users" class="page"> <!-- Section of the users -->
+                        <h1> Gestión de Usuarios </h1>
+                        <p> Listado de usuarios, filtros, roles y estado. </p>
+                        <div class="card">
+                            <p> Tabla de usuarios aparecería aquí...</p>
+                        </div>
+                    </div>
+                    <div id="sales" class="page"> <!-- Section of the sales -->
+                        <h1> Ventas </h1>
+                        <p> Historial y detalle de ventas </p>
+                    </div>
+                    <div id="products" class="page"> <!-- Section of the products -->
+                        <h1> Gestión de Productos </h1>
+                        <div class="card-products">
+                            <h3> Agregar Nuevo Vehículo a la Landing Page </h3>
+                            <p class="form-description"> Completa los datos para publicar un nuevo auto en el catálogo. </p>
+                            <form id="form-producto" class="product-form"> <!-- Create form to add a new object -->
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="p-name"> Nombre del Auto </label>
+                                        <input type="text" id="p-name" placeholder="Ej: Tesla Model 3" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="p-type"> Tipo de Vehículo </label>
+                                        <input type="text" id="p-type" placeholder="Ej: Sedan, SUV, Sport" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="p-price"> Precio por día ($) </label>
+                                        <input type="number" id="p-price" placeholder="99.00" required step="0.01">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="p-liters"> Capacidad Gasolina (L) </label>
+                                        <input type="number" id="p-liters" placeholder="80" required>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="p-people"> Pasajeros </label>
+                                        <input type="number" id="p-people" placeholder="4" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="p-section"> Sección de Destino </label>
+                                        <select id="p-section" required>
+                                            <option value="popular"> Popular Car </option>
+                                            <option value="recommendation"> Recommendation Car </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="p-image"> Imagen del Vehículo </label>
+                                    <input type="file" id="p-image" accept="image/*" required>
+                                </div>
+                                <button type="submit" class="btn-submit"> <i class="fa-solid fa-cloud-arrow-up"> </i> Publicar Vehículo </button>
+                            </form>
+                        </div>
+                    </div>
+                    <div id="settings" class="page"> <!-- Section of the settings -->
+                        <h1> Configuración </h1> 
+                        <p> Ajustes del sistema y perfil </p>
+                    </div>
+                </section>
+            </main>
+        </div>
+        <!-- Load JavaScript file to style and animations in the page -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"> </script>
+        <script src="../Dashboard/script.js"> </script>
+        <script src="../Dashboard/buttons.js"> </script>
+        <script src="../Dashboard/form.js"> </script>
+    </body>
+</html>

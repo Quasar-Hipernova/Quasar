@@ -1,0 +1,33 @@
+<!-- CREATE A LOGIN FOR THE DASHBOARD/LANDING PAGE -->
+<!DOCTYPE html> <!-- Hey browser, this is modern HTMl5 -->
+<html lang="en"> <!-- This page is English -->
+    <head> <!-- invisible but very important stuff (metadata, title, css, etc) -->
+        <meta charset="UTF-8"> <!-- Allows accents ñ, emojis, etc... -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes it look good on phones -->
+        <title> Login - Web Site </title> <!-- Text in the browser tab -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"> <!-- Load Font Awesome page to icon in the page -->
+        <link rel="stylesheet" href="../Login/login.css"> <!-- Load CSS file to style in the page -->
+    </head>
+    <body> <!-- Everithing the user sees -->
+        <section class="contact"> <!-- Create section contact -->
+            <div class="container">
+                <div class="login-card"> <!-- Create login card -->
+                    <div class="avatar"> </div> <!-- Create avatar -->
+                    <form action="#" method="post"> <!-- Create form -->
+                        <div class="input-box"> <!-- Tags float -->
+                            <span class="icon"> <i class="fa-regular fa-envelope"> </i> </span> <!-- Container icon of email -->
+                            <input type="email" id="email" placeholder="Email ID" > <!-- Create input and icon email -->
+                        </div>
+                        <div class="input-box">
+                            <span class="icon"> <i class="fa-solid fa-lock"> </i> </span> <!-- Container icon of password -->
+                            <input type="password" id="password" placeholder="Password" class="icon-password"> <!-- Create input and icon password -->
+                        </div>
+                        <button type="button" class="login-btn" id="button"> LOGIN </button> <!-- Create button for login -->
+                    </form> <!-- Closed form -->
+                </div> <!-- Closed div of login card -->
+            </div> <!-- Closed div of container -->
+        </section> <!-- Closed command section -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"> </script> <!-- Load the Sweetalert page to create alerts on the page -->
+        <script src="../Login/login.js"> </script> <!-- Load JavaScript file to style and animation in the page -->
+    </body>
+</html>
