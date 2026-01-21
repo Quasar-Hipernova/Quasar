@@ -203,6 +203,10 @@ body {
     display: block;
 }
 
+.red-color{
+    color: red;
+}
+
 /* Footer */
 .footer {
     background: #fff;

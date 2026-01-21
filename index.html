@@ -1,0 +1,104 @@
+<!-- CREATE A THE LANDING PAGE -->
+<!DOCTYPE html> <!-- Hey browser, this is modern HTML5 -->
+<html lang="en"> <!-- This page is English -->
+    <head> <!-- Invisible but very important stuff (metadata, title, css, etc) -->
+        <meta charset="UTF-8"> <!-- Allows accents ñ, emojis, etc... -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes it look good on phones -->
+        <title> Landing Page </title> <!-- Text in the browser tab -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"> <!-- Add Font Awesome for icons -->
+        <link rel="stylesheet" href="./Landingpage/style.css"> <!-- Load CSS file to style in the page -->
+    </head>
+    <body> <!-- Everything the user sees -->
+        <header class="header"> <!-- Create a section header -->
+            <div class="header-left">
+                <img src="./Landingpage/img/CarsCrud-logo.png" alt="CarsCrud Logo"> <!-- Logo Image -->
+                <h1 class="logo"> CarsCrud </h1>
+            </div>
+            <div class="header-right">
+                <div class="avatar"> <a href="./Login/login.html"> <img src="./Landingpage/img/Profil & Notification.png" alt="User profile"> </a> </div> <!-- Profile Image -->
+            </div>
+        </header>
+        <main class="layout"> <!-- Main -->
+            <section class="hero"> <!-- Hero Section -->
+                <article class="hero-card hero-primary">
+                    <div class="hero-content">
+                        <h2> The Best Platform for Car Rental </h2>
+                        <p> Ease of doing a car rental safely and reliably. Of course at a low price. </p>
+                        <button class="btn-1" data-action="rent"> Rental Car </button> <!-- Button for Rental Car -->
+                    </div>
+                    <div class="hero-image"> <img src="./Landingpage/img/Car1.png" alt="Car-Hero"> </div> <!-- Car Hero Image Section -->
+                </article>
+                <article class="hero-card hero-secondary">
+                    <div class="hero-content">
+                        <h2> Easy way to rent a car at a low price </h2>
+                        <p> Providing cheap car rental services and safe and comfortable facilities. </p>
+                        <button class="btn-2" data-action="rent"> Rental Car </button>
+                    </div>
+                    <div class="hero-image"> <img src="./Landingpage/img/Car2.png" alt="Car-Hero"> </div> <!-- Car Hero Image Section -->
+                </article>
+            </section>
+            <section class="search-section"> <!-- Search Section -->
+                <div class="search">
+                    <i class="fa-solid fa-magnifying-glass"> </i>
+                    <input id="searchInput" type="text" placeholder="Search">
+                </div>
+            </section>
+            <section class="cars"> <!-- Popular Cars Section -->
+                <header class="section-header">
+                    <h3> Popular Cars </h3>
+                </header>
+                <div  id="popular-cars-grid" class="cars-grid"> <!-- Car Card -->
+                    
+                </div>
+            </section>
+            <section class="cars"> <!-- Recommendation Cars Section -->
+                <header class="section-header">
+                    <h3> Recommendation Cars </h3>
+                </header>
+                <div id="recommendation-cars-grid" class="cars-grid"> <!-- Car Card -->
+                    
+                </div>
+            </section>
+        </main>
+        <footer class="footer"> <!-- Footer Section -->
+            <div class="footer-brand">
+                <h1> CarsCrud </h1>
+                <p> Our vision is to provide convenience <br> and help increase your sales business. </p>
+            </div>
+            <div class="footer-links">
+                <div>
+                    <h4> About </h4>
+                    <a href="#"> How it works </a>
+                    <a href="#"> Featured </a>
+                    <a href="#"> Partnership </a>
+                    <a href="#"> Business Relaiton </a>
+                </div>
+                <div>
+                    <h4> Community </h4>
+                    <a href="#"> Events </a>
+                    <a href="#"> Blog </a>
+                    <a href="#"> Podcast </a>
+                    <a href="#"> Invite a friend </a>
+                </div>
+                <div>
+                    <h4>Socials</h4>
+                    <a href="#"> Discord </a>
+                    <a href="#"> Instagram </a>
+                    <a href="#"> Twitter </a>
+                    <a href="#"> Facebook </a>
+                </div>
+            </div>
+            <div class="footer-line"> </div>
+            <div class="footer-copy">
+                <p> ©2025 crudzaso. All rights reserved </p>
+                <div class="footer-copy-secundary">
+                    <p> Privacy & Policy </p>
+                    <p> Terms & Condition </p>
+                </div>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"> </script> <!-- JS de Bootstrap -->
+        <script src="./Landingpage/script.js"> </script> <!-- Load JavaScript file to style and animations in the page -->
+    </body>
+</html>
