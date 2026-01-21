@@ -2,8 +2,6 @@
 
 A modern and responsive car rental management web application built with HTML, CSS, and JavaScript. CarsCrud provides a complete solution for managing car rentals with a public-facing landing page and an admin dashboard.
 
-![CarsCrud Logo](Landingpage/img/CarsCrud-logo.png)
-
 ## Features
 
 ### Landing Page (Public).
@@ -38,7 +36,7 @@ A modern and responsive car rental management web application built with HTML, C
 1. Clone or download the project:
 ```bash
 git clone <repository-url>
-cd "Quasar - CarsCrud"
+cd "Quasar/"
 ```
 
 2. Open `index.html` in your web browser:
