@@ -19,7 +19,7 @@ function intentarLogin () {
         });
         // Redirect after 2 seconds
         setTimeout (() => {
-            window.location = "../Landingpage/index.html";
+            window.location = "../index.html";
         }, 2000);
     }
     // Access the Dashboard
