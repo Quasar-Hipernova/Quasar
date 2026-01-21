@@ -3,7 +3,7 @@ button.addEventListener('click',function(){
 email = document.getElementById('email')
 password = document.getElementById('password')
 
-if(email.value =='jd@gmail.com'  && password.value == 'password'){
+if(email.value =='bj@gmail.com'  && password.value == '1234'){
     Swal.fire({
     title: 'Nice!',
     text: 'Niceee iniciaste',
